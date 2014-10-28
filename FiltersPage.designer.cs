@@ -38,6 +38,7 @@
             this.lblJobSup = new System.Windows.Forms.Label();
             this.lblJobType = new System.Windows.Forms.Label();
             this.lblJobSts = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelBottom.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // 
             this.panelBottom.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBottom.Controls.Add(this.btnExit);
             this.panelBottom.Controls.Add(this.bttnBack);
             this.panelBottom.Controls.Add(this.bttnNext);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -60,7 +62,7 @@
             this.bttnBack.ForeColor = System.Drawing.Color.Black;
             this.bttnBack.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.back;
             this.bttnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnBack.Location = new System.Drawing.Point(526, 11);
+            this.bttnBack.Location = new System.Drawing.Point(466, 11);
             this.bttnBack.Name = "bttnBack";
             this.bttnBack.Size = new System.Drawing.Size(75, 39);
             this.bttnBack.TabIndex = 3;
@@ -75,7 +77,7 @@
             this.bttnNext.ForeColor = System.Drawing.Color.Black;
             this.bttnNext.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.next;
             this.bttnNext.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnNext.Location = new System.Drawing.Point(607, 11);
+            this.bttnNext.Location = new System.Drawing.Point(547, 11);
             this.bttnNext.Name = "bttnNext";
             this.bttnNext.Size = new System.Drawing.Size(75, 39);
             this.bttnNext.TabIndex = 2;
@@ -167,6 +169,21 @@
             this.lblJobSts.TabIndex = 8;
             this.lblJobSts.Text = "Job Status";
             // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.Exit_new;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(628, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(62, 39);
+            this.btnExit.TabIndex = 47;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FiltersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +215,7 @@
         private System.Windows.Forms.Label lblJobSup;
         private System.Windows.Forms.Label lblJobType;
         private System.Windows.Forms.Label lblJobSts;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

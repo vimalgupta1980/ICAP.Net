@@ -23,19 +23,18 @@ namespace Syscon.IndirectCostAllocation
 
         #region Properties
 
+        private string _smbDir;
         public string MBDir
         {
-            get;
-            set;
+            get { return _smbDir; }
+            set
+            {
+                _smbDir = value;
+                FireSMBDirChangedEvent();
+            }
         }
 
         public string CompanyName
-        {
-            get;
-            set;
-        }
-
-        public string CompanyAuthCode
         {
             get;
             set;

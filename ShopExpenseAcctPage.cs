@@ -21,6 +21,7 @@ namespace Syscon.IndirectCostAllocation
         BindingSource _bindingSrc = null;
         DataSet _shopExpenseDS = null;
         IList<ICAPDataModel> _shopExpenseData = null;
+        private decimal _selectedPerAmount = 0.0M;
 
         /// <summary>
         /// Ctor
@@ -30,16 +31,74 @@ namespace Syscon.IndirectCostAllocation
             InitializeComponent();
 
             _bindingSrc = new BindingSource();
-            _shopExpenseDS = new DataSet("ShopExpense");
-            
+            _shopExpenseDS = new DataSet("ShopExpense");         
         }
+
+        public DataSet ShopExpenseDS
+        {
+            get { return _shopExpenseDS; }
+        }
+
+        List<string> Target = new List<string>();
+        List<string> Offset = new List<string>();
+        List<string> CostCode = new List<string>();
+        List<string> CostType = new List<string>();
+        List<string> eqpmnt = new List<string>();
 
         public void LoadData()
         {
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
-                DataTable dt = con.GetDataTable("ShopExpenseData", "SELECT * FROM syslgract WHERE recnum > 5000 AND recnum < 6000");
-                dt.TableName = "ShopExpenseData";
+                DataTable _dt = con.GetDataTable("TargetAccount", "SELECT * FROM lgract");
+                foreach (DataRow row in _dt.Rows)
+                {
+                    if (Convert.ToInt32(row["acttyp"]) == 13)
+                    {
+                        Target.Add(row["recnum"].ToString() + " - " + row["lngnme"].ToString());
+                    }
+
+                }
+
+                DataTable _dtOffset = con.GetDataTable("Offset", "SELECT * FROM syslgract");
+                foreach (DataRow row in _dtOffset.Rows)
+                {
+
+                    if (Convert.ToInt32(row["acttyp"]) == 14)
+                    {
+                        Offset.Add(row["recnum"].ToString() + " - " + row["lngnme"].ToString());
+                    }
+
+                }
+
+                DataTable _dtCostCode = con.GetDataTable("CostCode", "SELECT * FROM cstcde");
+                foreach (DataRow row in _dtCostCode.Rows)
+                {
+                    CostCode.Add(row["recnum"].ToString() + " - " + row["cdenme"].ToString());
+                    CostCode.Sort();
+                }
+
+                DataTable _dtCostType = con.GetDataTable("CostType", "SELECT * FROM csttyp");
+                foreach (DataRow row in _dtCostType.Rows)
+                {
+                    CostType.Add(row["recnum"].ToString() + " - " + row["typnme"].ToString());
+                }
+
+                DataTable _dtEqpnum = con.GetDataTable("eqpmnt", "SELECT * FROM eqpmnt");
+                foreach (DataRow row in _dtEqpnum.Rows)
+                {
+                    eqpmnt.Add(row["recnum"].ToString() + " - " + row["eqpnme"].ToString());
+                    eqpmnt.Sort();
+                }
+                
+                cboDirExpTarAcct.DataSource = Target;
+                cboShopExpOffAcct.DataSource = Offset;
+                cboDirExpTarCC.DataSource = CostCode;
+                cboShopExpTarCT.DataSource = CostType;
+                cboEquipment.DataSource = eqpmnt;
+
+                DataTable dt = con.GetDataTable("ExpenseData", "SELECT * FROM syslgract WHERE recnum > 5000 AND recnum < 6000");
+                dt.TableName = "ExpenseData";
+                dt.Columns.Add(new DataColumn("TotalPerAmt", typeof(decimal)));
                 _shopExpenseDS.Tables.Add(dt);
 
                 _shopExpenseData = new List<ICAPDataModel>();
@@ -61,6 +120,7 @@ namespace Syscon.IndirectCostAllocation
                 dgvShopExpAccts.Columns[5].DataPropertyName = "peramt";
 
                 _shopExpenseDS.WriteXml(@"D:\ShopExpenseData.xml");
+                _shopExpenseDS.WriteXmlSchema(@"D:\ExpenseData.xsd");
 
                 decimal totalAmount = 0.0M;
                 decimal selTotalAmount = 0.0M;
@@ -77,6 +137,10 @@ namespace Syscon.IndirectCostAllocation
 
                 txtTotalCostInPeriod.Text = totalAmount.ToString();
                 txtTotalCostSelected.Text = selTotalAmount.ToString();
+
+                if (dt.Rows.Count > 0)
+                    _shopExpenseDS.Tables[0].Rows[0].SetField<decimal>("TotalPerAmt", selTotalAmount);
+                _selectedPerAmount = selTotalAmount;
             }
         }
         
@@ -88,7 +152,10 @@ namespace Syscon.IndirectCostAllocation
 
         private void bttnPreview_Click(object sender, EventArgs e)
         {
-
+            using (ExpenseReportViewerForm reportViewer = new ExpenseReportViewerForm(_shopExpenseDS, _selectedPerAmount))
+            {
+                reportViewer.ShowDialog();
+            }
         }
 
         private void bttnPrint_Click(object sender, EventArgs e)
@@ -164,6 +231,10 @@ namespace Syscon.IndirectCostAllocation
             }
 
             txtTotalCostSelected.Text = sumSelAmt.ToString();
+            if (_shopExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
+                _shopExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", sumSelAmt);
+
+            _selectedPerAmount = sumSelAmt;
         }
 
         private void chkSelectAll_CheckedChanged(object sender, EventArgs e)
@@ -194,6 +265,7 @@ namespace Syscon.IndirectCostAllocation
                 dgvShopExpAccts.Refresh();
 
                 txtTotalCostSelected.Text = "0.00";
+                _selectedPerAmount = 0.0M;
             }
         }
 
@@ -243,6 +315,11 @@ namespace Syscon.IndirectCostAllocation
 
                 this.LoadSelAmount();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
         }
 
     }

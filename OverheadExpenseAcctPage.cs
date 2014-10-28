@@ -18,7 +18,8 @@ namespace Syscon.IndirectCostAllocation
         BindingSource _bindingSrc = null;
         DataSet _overheadExpenseDS = null;
         IList<ICAPDataModel> _overHeadExpenseData = null;
-
+        private decimal _selectedPerAmount = 0.0M;
+        
         /// <summary>
         /// 
         /// </summary>
@@ -27,20 +28,66 @@ namespace Syscon.IndirectCostAllocation
             InitializeComponent();
 
             _bindingSrc = new BindingSource();
-            _overheadExpenseDS = new DataSet("OverheadExpense");
+            _overheadExpenseDS = new DataSet("ShopExpense");
         }
 
         private MainForm MainForm
         {
             get { return this.ParentForm as MainForm; }
         }
-
+        List<string> Target = new List<string>();
+        List<string> Offset = new List<string>();
+        List<string> CostCode = new List<string>();
+        List<string> CostType = new List<string>();
         public void LoadData()
         {
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
+                 DataTable _dt = con.GetDataTable("TargetAccount", "SELECT * FROM lgract");
+                 foreach (DataRow row in _dt.Rows)
+                    {
+                        if (Convert.ToInt32(row["acttyp"]) == 13)
+                        {
+                            Target.Add(row["recnum"].ToString() + " - " + row["lngnme"].ToString());
+                        }
+
+                }
+
+                 DataTable _dtOffset = con.GetDataTable("Offset", "SELECT * FROM syslgract");
+                 foreach (DataRow row in _dtOffset.Rows)
+                 {
+                     
+                     if (Convert.ToInt32(row["acttyp"]) == 14)
+                     {
+                         Offset.Add(row["recnum"].ToString() + " - " + row["lngnme"].ToString());
+                     }
+
+                 }
+
+                 DataTable _dtCostCode = con.GetDataTable("CostCode", "SELECT * FROM cstcde");
+                 foreach (DataRow row in _dtCostCode.Rows)
+                 {
+                     CostCode.Add(row["recnum"].ToString() + " - " + row["cdenme"].ToString());
+                     CostCode.Sort();
+                 }
+
+                 DataTable _dtCostType = con.GetDataTable("CostType", "SELECT * FROM csttyp");
+                 foreach (DataRow row in _dtCostType.Rows)
+                 {
+                     CostType.Add(row["recnum"].ToString() + " - " + row["typnme"].ToString());
+                    
+                 }  
+                
+                cboDirectExpTarAcct.DataSource = Target;
+                cboOverheadExpOffsetAcct.DataSource=Offset;
+                cboDirExpTarCostCode.DataSource = CostCode;
+                cboDirExpTarCostType.DataSource = CostType;
+                
+                
                 DataTable dt = con.GetDataTable("OverheadExpenseData", "SELECT * FROM syslgract WHERE recnum > 6000 AND recnum < 7000");
-                dt.TableName = "OverheadExpenseData";
+                dt.TableName = "ExpenseData";
+                dt.Columns.Add(new DataColumn("TotalPerAmt", typeof(decimal)));
+
                 _overheadExpenseDS.Tables.Add(dt);
 
                 _overHeadExpenseData = new List<ICAPDataModel>();
@@ -61,7 +108,8 @@ namespace Syscon.IndirectCostAllocation
                 dgvOverheadExpAccts.Columns[4].DataPropertyName = "shtnme";
                 dgvOverheadExpAccts.Columns[5].DataPropertyName = "peramt";
 
-                _overheadExpenseDS.WriteXml(@"D:\OverheadExpenseData.xml");
+                //_overheadExpenseDS.WriteXml(@"D:\OverheadExpenseData.xml");
+                //_overheadExpenseDS.WriteXmlSchema(@"D:\OverheadExpenseData.xsd");
 
                 decimal totalAmount = 0.0M;
                 decimal selTotalAmount = 0.0M;
@@ -78,12 +126,20 @@ namespace Syscon.IndirectCostAllocation
 
                 txtTotalCostInPeriod.Text = totalAmount.ToString();
                 txtTotalCostSelected.Text = selTotalAmount.ToString();
+                if (dt.Rows.Count > 0)
+                    _overheadExpenseDS.Tables[0].Rows[0].SetField<decimal>("TotalPerAmt", selTotalAmount);
+
+                _selectedPerAmount = selTotalAmount;
             }
         }
 
         private void bttnPreview_Click(object sender, EventArgs e)
         {
             //Show report
+            using (ExpenseReportViewerForm reportViewer = new ExpenseReportViewerForm(_overheadExpenseDS, 0.0M))
+            {
+                reportViewer.ShowDialog();
+            }
         }
 
         private void bttnPrint_Click(object sender, EventArgs e)
@@ -113,7 +169,8 @@ namespace Syscon.IndirectCostAllocation
                 }
                 chkUnselectAll.Checked = false;
                 dgvOverheadExpAccts.Refresh();
-            }            
+            }
+            LoadSelAmount();
         }
 
         private void chkUnselectAll_CheckedChanged(object sender, EventArgs e)
@@ -128,6 +185,28 @@ namespace Syscon.IndirectCostAllocation
                 chkSelectAll.Checked = false;
                 dgvOverheadExpAccts.Refresh();
             }
+            if (_overheadExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
+                _overheadExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", 0.0M);
+
+            _selectedPerAmount = 0.0M;
+        }
+
+        private void LoadSelAmount()
+        {
+            decimal sumSelAmt = 0.0M;
+            foreach (ICAPDataModel data in _overHeadExpenseData)
+            {
+                if (data.UseAct)
+                {
+                    sumSelAmt += data.PerAmt;
+                }
+            }
+
+            txtTotalCostSelected.Text = sumSelAmt.ToString();
+            if (_overheadExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
+                _overheadExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", sumSelAmt);
+
+            _selectedPerAmount = sumSelAmt;
         }
 
         private void chkHideZeroAccts_CheckedChanged(object sender, EventArgs e)
@@ -165,6 +244,30 @@ namespace Syscon.IndirectCostAllocation
         private void OverheadExpenseAcctPage_Load(object sender, EventArgs e)
         {
             LoadData();
+            
+        }
+
+        
+
+        private void dgvOverheadExpAccts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvOverheadExpAccts.Columns["useAct"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewCheckBoxColumn col = dgvOverheadExpAccts.Columns["useAct"] as DataGridViewCheckBoxColumn;
+                DataGridViewCheckBoxCell cell = dgvOverheadExpAccts.Rows[e.RowIndex].Cells["useAct"] as DataGridViewCheckBoxCell;
+
+                bool enqueued = !((bool)cell.EditingCellFormattedValue);
+
+                ICAPDataModel dataRow = (ICAPDataModel)dgvOverheadExpAccts.Rows[e.RowIndex].DataBoundItem;
+                dataRow.UseAct = enqueued;
+
+                this.LoadSelAmount();
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
         }
     }
 }

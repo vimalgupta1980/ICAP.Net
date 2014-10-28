@@ -29,13 +29,14 @@ namespace Syscon.IndirectCostAllocation
     {
         private SysconCommon.COMMethods mbapi = new SysconCommon.COMMethods();
         private bool loaded = false;
-        private SetupForm _setupForm = new SetupForm();
+        private SetupForm _setupForm = null;
         private MainPage _mainPage;
         private FiltersPage _filtersPage;
         private ShopExpenseAcctPage _shopExpAcctPage;
         private OverheadExpenseAcctPage _overExpAcctPage;
         private AdminExpenseAcctPage _adminExpAcctPage;
         private AdvanceAllocationPage _advAllocationPage;
+        private SetupParams _setupParams;
 
         public MainForm()
         {
@@ -97,7 +98,10 @@ namespace Syscon.IndirectCostAllocation
             _overExpAcctPage.Visible = false;
             this.panelPageContainer.Controls.Add(_advAllocationPage);
 
-            this._setupForm.SMBDirChanged += new EventHandler(SetupForm_SMBDirChanged);
+            _setupParams = new SetupParams();
+            _setupForm = new SetupForm(_setupParams);
+
+            this._setupParams.SMBDirChanged += new EventHandler(Setup_SMBDirChanged);
         }
        
         public COMMethods MbApi
@@ -121,14 +125,8 @@ namespace Syscon.IndirectCostAllocation
             page.Visible = true;            
         }
 
-        void SetupForm_SMBDirChanged(object sender, EventArgs e)
+        void Setup_SMBDirChanged(object sender, EventArgs e)
         {
-            //if (_biddersDS != null)
-            //{
-            //    _biddersDS.Tables.Clear();
-            //    _biddersDS.Dispose();
-            //    _biddersDS = null;
-            //}
 
             CheckDefaults();
         }
@@ -185,7 +183,6 @@ namespace Syscon.IndirectCostAllocation
             //CheckDefaults();
         }
 
-        DataSet _biddersDS = null;
         private void CheckDefaults()
         {
             string dataDir = mbapi.smartGetSMBDir();

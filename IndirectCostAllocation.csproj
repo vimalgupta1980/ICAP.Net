@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvanceAllocationDataModel.cs" />
     <Compile Include="DataTableHelper.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="ICAPDataModel.cs" />
@@ -102,6 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ExpenseData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SetupParams.cs" />
     <Compile Include="ShopExpenseAcctPage.cs">
       <SubType>UserControl</SubType>
@@ -124,11 +130,11 @@
     <Compile Include="SetupForm.Designer.cs">
       <DependentUpon>SetupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ReportViewer.cs">
+    <Compile Include="Reports\ExpenseReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\ReportViewer.Designer.cs">
-      <DependentUpon>ReportViewer.cs</DependentUpon>
+    <Compile Include="Reports\ExpenseReportViewer.Designer.cs">
+      <DependentUpon>ExpenseReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="SMBHelper.cs" />
     <EmbeddedResource Include="MainPage.resx">
@@ -161,8 +167,8 @@
       <DependentUpon>SetupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\jcdetail.rdlc" />
-    <EmbeddedResource Include="Reports\ReportViewer.resx">
-      <DependentUpon>ReportViewer.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\ExpenseReportViewer.resx">
+      <DependentUpon>ExpenseReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\jcdetail_land.rdlc" />
     <EmbeddedResource Include="Reports\tt_syslgract.rdlc" />
@@ -180,6 +186,17 @@
   <ItemGroup>
     <Content Include="Images\ACSUMIPT.GIF" />
     <Content Include="Images\back.gif" />
+    <None Include="Reports\ExpenseData.xsc">
+      <DependentUpon>ExpenseData.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ExpenseData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExpenseData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ExpenseData.xss">
+      <DependentUpon>ExpenseData.xsd</DependentUpon>
+    </None>
     <None Include="Resources\p_PREVIEW.BMP" />
     <None Include="Resources\_save.bmp" />
     <None Include="Resources\chkMark.bmp" />
@@ -207,7 +224,6 @@
     <None Include="Resources\next.gif" />
     <None Include="Resources\back.gif" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -17,14 +17,15 @@ namespace Syscon.IndirectCostAllocation
         private string _originalAppTitle = string.Empty;
         private SysconCommon.COMMethods _mbApi = new SysconCommon.COMMethods();
 
-        public event EventHandler SMBDirChanged;
+        //public event EventHandler SMBDirChanged;
+        private SetupParams _setupParams = null;
 
-
-        public SetupForm()
+        public SetupForm(SetupParams setupParams)
         {
             InitializeComponent();
 
             _originalAppTitle = this.Text;
+            _setupParams = setupParams;
         }
 
         private void FormSetup_Load(object sender, EventArgs e)
@@ -44,7 +45,11 @@ namespace Syscon.IndirectCostAllocation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            //Save params
+            _setupParams.CompanyName = txtCompanyName.Text;
+            _setupParams.CopyPercentToJobcst = this.chkCopyPercent.Checked;
+            _setupParams.CreateReversalEntry = this.chkCreateReversal.Checked;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
         private void btnSelectDir_Click(object sender, EventArgs e)
@@ -54,11 +59,13 @@ namespace Syscon.IndirectCostAllocation
             if (usr != null)
             {
                 txtSMBDir.Text = this.MainForm.MbApi.smartGetSMBDir();
-                if (SMBDirChanged != null)
-                {
-                    SMBDirChanged(this, EventArgs.Empty);
-                }
+                _setupParams.MBDir = txtSMBDir.Text;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
     }
 }

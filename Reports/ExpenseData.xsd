@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="ExpenseDS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="ExpenseDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ExpenseData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="recnum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="shtnme" type="xs:string" minOccurs="0" />
+              <xs:element name="lngnme" type="xs:string" minOccurs="0" />
+              <xs:element name="subact" type="xs:decimal" minOccurs="0" />
+              <xs:element name="actnme" type="xs:string" minOccurs="0" />
+              <xs:element name="ctract" type="xs:decimal" minOccurs="0" />
+              <xs:element name="acttyp" type="xs:decimal" minOccurs="0" />
+              <xs:element name="peramt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="useact" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TotalPerAmt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

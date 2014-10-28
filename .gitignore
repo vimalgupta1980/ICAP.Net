@@ -41,3 +41,36 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+obj/x86/Debug/IndirectCostAllocation.csproj.FileListAbsolute.txt
+Assemblies/Debug/ICAP.vshost.exe.manifest
+obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Assemblies/Debug/ICAP.vshost.exe.config
+Assemblies/Debug/ICAP.vshost.exe
+Assemblies/Debug/ICAP.exe.config
+Assemblies/Debug/antlr.runtime.dll
+Assemblies/Debug/ICAP.exe
+Assemblies/Debug/ICAP.pdb
+Assemblies/Debug/nunit.framework.dll
+Assemblies/Debug/nunit.framework.xml
+Assemblies/Debug/PLUSManaged.dll
+Assemblies/Debug/StringTemplate.dll
+Assemblies/Debug/SysconCommon.dll
+Assemblies/Debug/SysconCommon.pdb
+Assemblies/Debug/System.Data.SQLite.dll
+Assemblies/Debug/System.Data.SQLite.pdb
+Assemblies/Release/antlr.runtime.dll
+Assemblies/Release/ICAP.exe
+Assemblies/Release/ICAP.exe.config
+Assemblies/Release/ICAP.pdb
+Assemblies/Release/ICAP.vshost.exe
+Assemblies/Release/ICAP.vshost.exe.config
+Assemblies/Release/ICAP.vshost.exe.manifest
+Assemblies/Release/nunit.framework.dll
+Assemblies/Release/nunit.framework.xml
+Assemblies/Release/PLUSManaged.dll
+Assemblies/Release/StringTemplate.dll
+Assemblies/Release/SysconCommon.dll
+Assemblies/Release/SysconCommon.pdb
+Assemblies/Release/System.Data.SQLite.dll
+Assemblies/Release/System.Data.SQLite.pdb

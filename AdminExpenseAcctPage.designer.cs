@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.chkSelectAll = new System.Windows.Forms.CheckBox();
             this.chkUnSelectAll = new System.Windows.Forms.CheckBox();
             this.chkHideZeroAccts = new System.Windows.Forms.CheckBox();
             this.chkSortBySubAcct = new System.Windows.Forms.CheckBox();
             this.dgvOverheadExpAcct = new System.Windows.Forms.DataGridView();
-            this.chk_box = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.useAct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Account_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sub_Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,7 @@
             this.bttnBack = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelMid = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOverheadExpAcct)).BeginInit();
             this.panelTop.SuspendLayout();
@@ -131,22 +132,22 @@
             // 
             this.dgvOverheadExpAcct.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvOverheadExpAcct.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvOverheadExpAcct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvOverheadExpAcct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvOverheadExpAcct.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOverheadExpAcct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOverheadExpAcct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOverheadExpAcct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvOverheadExpAcct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOverheadExpAcct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chk_box,
+            this.useAct,
             this.Account,
             this.Account_Name,
             this.Sub_Account,
@@ -158,27 +159,28 @@
             this.dgvOverheadExpAcct.GridColor = System.Drawing.Color.Navy;
             this.dgvOverheadExpAcct.Location = new System.Drawing.Point(0, 0);
             this.dgvOverheadExpAcct.Name = "dgvOverheadExpAcct";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOverheadExpAcct.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOverheadExpAcct.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvOverheadExpAcct.RowHeadersWidth = 20;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvOverheadExpAcct.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvOverheadExpAcct.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvOverheadExpAcct.RowTemplate.Height = 18;
             this.dgvOverheadExpAcct.ShowCellToolTips = false;
-            this.dgvOverheadExpAcct.Size = new System.Drawing.Size(758, 312);
+            this.dgvOverheadExpAcct.Size = new System.Drawing.Size(858, 312);
             this.dgvOverheadExpAcct.TabIndex = 5;
+            this.dgvOverheadExpAcct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOverheadExpAcct_CellClick);
             // 
-            // chk_box
+            // useAct
             // 
-            this.chk_box.HeaderText = "";
-            this.chk_box.Name = "chk_box";
-            this.chk_box.Width = 20;
+            this.useAct.HeaderText = "";
+            this.useAct.Name = "useAct";
+            this.useAct.Width = 20;
             // 
             // Account
             // 
@@ -259,7 +261,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(482, 23);
+            this.label6.Location = new System.Drawing.Point(459, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 15);
             this.label6.TabIndex = 10;
@@ -269,7 +271,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(482, 47);
+            this.label7.Location = new System.Drawing.Point(459, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 15);
             this.label7.TabIndex = 11;
@@ -279,65 +281,65 @@
             // 
             this.cboDirectExpTarAcct.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDirectExpTarAcct.FormattingEnabled = true;
-            this.cboDirectExpTarAcct.Location = new System.Drawing.Point(195, 15);
+            this.cboDirectExpTarAcct.Location = new System.Drawing.Point(202, 15);
             this.cboDirectExpTarAcct.Name = "cboDirectExpTarAcct";
-            this.cboDirectExpTarAcct.Size = new System.Drawing.Size(276, 23);
+            this.cboDirectExpTarAcct.Size = new System.Drawing.Size(240, 23);
             this.cboDirectExpTarAcct.TabIndex = 12;
             // 
             // cboDirExpTarCostCode
             // 
             this.cboDirExpTarCostCode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDirExpTarCostCode.FormattingEnabled = true;
-            this.cboDirExpTarCostCode.Location = new System.Drawing.Point(195, 41);
+            this.cboDirExpTarCostCode.Location = new System.Drawing.Point(202, 41);
             this.cboDirExpTarCostCode.Name = "cboDirExpTarCostCode";
-            this.cboDirExpTarCostCode.Size = new System.Drawing.Size(276, 23);
+            this.cboDirExpTarCostCode.Size = new System.Drawing.Size(240, 23);
             this.cboDirExpTarCostCode.TabIndex = 13;
             // 
             // cboDirExpTarCostType
             // 
             this.cboDirExpTarCostType.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDirExpTarCostType.FormattingEnabled = true;
-            this.cboDirExpTarCostType.Location = new System.Drawing.Point(195, 67);
+            this.cboDirExpTarCostType.Location = new System.Drawing.Point(202, 67);
             this.cboDirExpTarCostType.Name = "cboDirExpTarCostType";
-            this.cboDirExpTarCostType.Size = new System.Drawing.Size(276, 23);
+            this.cboDirExpTarCostType.Size = new System.Drawing.Size(240, 23);
             this.cboDirExpTarCostType.TabIndex = 14;
             // 
             // cboOverheadExpOffsetAcct
             // 
             this.cboOverheadExpOffsetAcct.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOverheadExpOffsetAcct.FormattingEnabled = true;
-            this.cboOverheadExpOffsetAcct.Location = new System.Drawing.Point(195, 92);
+            this.cboOverheadExpOffsetAcct.Location = new System.Drawing.Point(202, 92);
             this.cboOverheadExpOffsetAcct.Name = "cboOverheadExpOffsetAcct";
-            this.cboOverheadExpOffsetAcct.Size = new System.Drawing.Size(276, 23);
+            this.cboOverheadExpOffsetAcct.Size = new System.Drawing.Size(240, 23);
             this.cboOverheadExpOffsetAcct.TabIndex = 15;
             // 
             // txtTotalCostSelected
             // 
             this.txtTotalCostSelected.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtTotalCostSelected.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCostSelected.Location = new System.Drawing.Point(603, 44);
+            this.txtTotalCostSelected.Location = new System.Drawing.Point(581, 44);
             this.txtTotalCostSelected.Name = "txtTotalCostSelected";
             this.txtTotalCostSelected.ReadOnly = true;
-            this.txtTotalCostSelected.Size = new System.Drawing.Size(146, 21);
+            this.txtTotalCostSelected.Size = new System.Drawing.Size(194, 21);
             this.txtTotalCostSelected.TabIndex = 16;
             // 
             // txtTotalCostInPeriod
             // 
             this.txtTotalCostInPeriod.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtTotalCostInPeriod.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCostInPeriod.Location = new System.Drawing.Point(603, 18);
+            this.txtTotalCostInPeriod.Location = new System.Drawing.Point(581, 18);
             this.txtTotalCostInPeriod.Name = "txtTotalCostInPeriod";
             this.txtTotalCostInPeriod.ReadOnly = true;
-            this.txtTotalCostInPeriod.Size = new System.Drawing.Size(146, 21);
+            this.txtTotalCostInPeriod.Size = new System.Drawing.Size(194, 21);
             this.txtTotalCostInPeriod.TabIndex = 17;
             // 
             // bttnPrint
             // 
             this.bttnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bttnPrint.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnPrint.Location = new System.Drawing.Point(555, 74);
+            this.bttnPrint.Location = new System.Drawing.Point(526, 74);
             this.bttnPrint.Name = "bttnPrint";
-            this.bttnPrint.Size = new System.Drawing.Size(64, 37);
+            this.bttnPrint.Size = new System.Drawing.Size(65, 37);
             this.bttnPrint.TabIndex = 19;
             this.bttnPrint.Text = "&Print";
             this.bttnPrint.UseVisualStyleBackColor = true;
@@ -347,7 +349,7 @@
             // 
             this.bttnPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bttnPreview.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnPreview.Location = new System.Drawing.Point(490, 74);
+            this.bttnPreview.Location = new System.Drawing.Point(462, 74);
             this.bttnPreview.Name = "bttnPreview";
             this.bttnPreview.Size = new System.Drawing.Size(64, 37);
             this.bttnPreview.TabIndex = 20;
@@ -361,9 +363,9 @@
             this.bttnNext.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnNext.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.next;
             this.bttnNext.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnNext.Location = new System.Drawing.Point(685, 74);
+            this.bttnNext.Location = new System.Drawing.Point(655, 74);
             this.bttnNext.Name = "bttnNext";
-            this.bttnNext.Size = new System.Drawing.Size(64, 37);
+            this.bttnNext.Size = new System.Drawing.Size(65, 37);
             this.bttnNext.TabIndex = 21;
             this.bttnNext.Text = "&Next";
             this.bttnNext.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -376,7 +378,7 @@
             this.bttnBack.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnBack.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.back;
             this.bttnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnBack.Location = new System.Drawing.Point(620, 74);
+            this.bttnBack.Location = new System.Drawing.Point(591, 74);
             this.bttnBack.Name = "bttnBack";
             this.bttnBack.Size = new System.Drawing.Size(64, 37);
             this.bttnBack.TabIndex = 18;
@@ -395,11 +397,12 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(758, 30);
+            this.panelTop.Size = new System.Drawing.Size(858, 30);
             this.panelTop.TabIndex = 22;
             // 
             // panelBottom
             // 
+            this.panelBottom.Controls.Add(this.btnExit);
             this.panelBottom.Controls.Add(this.label2);
             this.panelBottom.Controls.Add(this.label3);
             this.panelBottom.Controls.Add(this.bttnNext);
@@ -419,8 +422,23 @@
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 342);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(758, 130);
+            this.panelBottom.Size = new System.Drawing.Size(858, 130);
             this.panelBottom.TabIndex = 23;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.Exit_new;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(720, 74);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(60, 38);
+            this.btnExit.TabIndex = 22;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panelMid
             // 
@@ -428,7 +446,7 @@
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 30);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(758, 312);
+            this.panelMid.Size = new System.Drawing.Size(858, 312);
             this.panelMid.TabIndex = 24;
             // 
             // AdminExpenseAcctPage
@@ -441,7 +459,7 @@
             this.Controls.Add(this.panelTop);
             this.Name = "AdminExpenseAcctPage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Size = new System.Drawing.Size(758, 472);
+            this.Size = new System.Drawing.Size(788, 472);
             this.Load += new System.EventHandler(this.AdminExpenseAcctPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOverheadExpAcct)).EndInit();
             this.panelTop.ResumeLayout(false);
@@ -480,11 +498,12 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Panel panelMid;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn chk_box;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn useAct;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sub_Account;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sub_Acc_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Period;
+        private System.Windows.Forms.Button btnExit;
     }
 }

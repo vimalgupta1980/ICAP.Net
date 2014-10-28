@@ -75,6 +75,23 @@ namespace Syscon.IndirectCostAllocation
             set { _fiscalYear = value; }
         }
 
+        public static string GetCurrentFinancialYear()
+        {
+            int CurrentYear = DateTime.Today.Year;
+            int PreviousYear = DateTime.Today.Year - 1;
+            int NextYear = DateTime.Today.Year + 1;
+            string PreYear = PreviousYear.ToString();
+            string NexYear = NextYear.ToString();
+            string CurYear = CurrentYear.ToString();
+            string FinYear = null;
+
+            if (DateTime.Today.Month < 3)
+                FinYear = CurYear;
+            else
+                FinYear = CurYear;
+            return FinYear.Trim();
+        }
+
         private void MainPage_Load(object sender, EventArgs e)
         {
             List<ListBoxData> startPeriodData = new List<ListBoxData>();
@@ -83,6 +100,9 @@ namespace Syscon.IndirectCostAllocation
             DataTable dt = null;
 
             txtMBDir.Text = this.MainForm.MbApi.smartGetSMBDir();
+
+            var fy = GetCurrentFinancialYear();
+            cbnoFiscalYear.Text = fy;
 
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
@@ -109,6 +129,8 @@ namespace Syscon.IndirectCostAllocation
                 lstCostType.DataSource = costTypeData;
             }
         }
+
+
 
         private void cbnoFiscalYear_SelectedIndexChanged(object sender, EventArgs e)
         {            
@@ -163,7 +185,8 @@ namespace Syscon.IndirectCostAllocation
 
         private void btnProgSetup_Click(object sender, EventArgs e)
         {
-
+            SetupForm sf = new SetupForm(_setupParams);
+            sf.ShowDialog(this.MainForm);
         }
 
         private void MainPage_VisibleChanged(object sender, EventArgs e)
@@ -179,11 +202,14 @@ namespace Syscon.IndirectCostAllocation
         private void radByHour_CheckedChanged(object sender, EventArgs e)
         {
             _allocationMethod = AllocationMethod.ByHours;
+            this.lstCostType.Enabled = true;
         }
 
         private void radByRevenue_CheckedChanged(object sender, EventArgs e)
         {
             _allocationMethod = AllocationMethod.ByRevenue;
+            this.lstCostType.Enabled = false;
+          
         }
 
     }

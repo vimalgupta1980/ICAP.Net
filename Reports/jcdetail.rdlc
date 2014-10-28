@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
   <DataSources>
-    <DataSource Name="studentDataSet1">
+    <DataSource Name="studentDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
@@ -54,7 +54,7 @@
         </Field>
       </Fields>
       <Query>
-        <DataSourceName>studentDataSet1</DataSourceName>
+        <DataSourceName>studentDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <rd:DataSetInfo>
@@ -166,7 +166,7 @@
         <Top>1.68055in</Top>
         <Left>0.03126in</Left>
         <Height>0.25695in</Height>
-        <Width>10.7257in</Width>
+        <Width>9.24653in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -211,7 +211,7 @@
         <Top>2.00694in</Top>
         <Left>0.04689in</Left>
         <Height>0.23611in</Height>
-        <Width>10.7257in</Width>
+        <Width>9.2309in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -255,7 +255,7 @@
         <KeepTogether>true</KeepTogether>
         <Top>4.0868in</Top>
         <Height>0.26042in</Height>
-        <Width>10.7257in</Width>
+        <Width>9.27779in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -300,7 +300,7 @@
         <Top>5.04847in</Top>
         <Left>0.01563in</Left>
         <Height>0.26042in</Height>
-        <Width>10.71007in</Width>
+        <Width>9.26216in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -628,7 +628,7 @@
         <Top>3.02431in</Top>
         <Left>0.04689in</Left>
         <Height>0in</Height>
-        <Width>10.7257in</Width>
+        <Width>9.2309in</Width>
         <ZIndex>15</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
@@ -956,51 +956,6 @@
           </Border>
         </Style>
       </Tablix>
-      <Rectangle Name="Rectangle5">
-        <ReportItems>
-          <Textbox Name="Textbox18">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Page Footer 1:</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox11</rd:DefaultName>
-            <Top>0.02778in</Top>
-            <Left>0.2675in</Left>
-            <Height>0.20139in</Height>
-            <Width>1.23958in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>5.73611in</Top>
-        <Left>0.01563in</Left>
-        <Height>0.26042in</Height>
-        <Width>10.71007in</Width>
-        <ZIndex>21</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>LightSteelBlue</BackgroundColor>
-        </Style>
-      </Rectangle>
       <Textbox Name="Textbox31">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -1022,7 +977,7 @@
         <Left>0.31439in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>21</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1040,8 +995,8 @@
         <Top>2.27083in</Top>
         <Left>0.01563in</Left>
         <Height>0in</Height>
-        <Width>10.75696in</Width>
-        <ZIndex>23</ZIndex>
+        <Width>9.26216in</Width>
+        <ZIndex>22</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1072,7 +1027,7 @@
         <Left>0.31439in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>23</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1117,7 +1072,7 @@
         <Left>2.53126in</Left>
         <Height>0.25in</Height>
         <Width>3.17708in</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>24</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1162,7 +1117,7 @@
         <Left>5.92709in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>25</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1209,7 +1164,7 @@
         <Left>7.3889in</Left>
         <Height>0.25in</Height>
         <Width>1.27083in</Width>
-        <ZIndex>27</ZIndex>
+        <ZIndex>26</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1256,7 +1211,7 @@
         <Left>2.19793in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>27</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1303,7 +1258,7 @@
         <Left>3.40627in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>28</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1350,7 +1305,7 @@
         <Left>4.84029in</Left>
         <Height>0.25in</Height>
         <Width>0.625in</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>29</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1397,7 +1352,7 @@
         <Left>5.64932in</Left>
         <Height>0.25in</Height>
         <Width>0.75in</Width>
-        <ZIndex>31</ZIndex>
+        <ZIndex>30</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1444,7 +1399,7 @@
         <Left>6.60071in</Left>
         <Height>0.25in</Height>
         <Width>0.71875in</Width>
-        <ZIndex>32</ZIndex>
+        <ZIndex>31</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1491,7 +1446,7 @@
         <Left>7.3889in</Left>
         <Height>0.25in</Height>
         <Width>0.94444in</Width>
-        <ZIndex>33</ZIndex>
+        <ZIndex>32</ZIndex>
         <Visibility>
           <ToggleItem>Textbox12</ToggleItem>
         </Visibility>
@@ -1536,7 +1491,7 @@
         <Left>4.25708in</Left>
         <Height>0.25in</Height>
         <Width>2.5625in</Width>
-        <ZIndex>34</ZIndex>
+        <ZIndex>33</ZIndex>
         <Visibility>
           <ToggleItem>Textbox14</ToggleItem>
         </Visibility>
@@ -1566,8 +1521,18 @@
     <Height>6.32986in</Height>
     <Style />
   </Body>
-  <Width>10.77259in</Width>
+  <Width>9.29342in</Width>
   <Page>
+    <PageFooter>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

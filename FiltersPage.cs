@@ -112,5 +112,10 @@ namespace Syscon.IndirectCostAllocation
             this.MainForm.Size = new Size(880, 630);
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+        }
+
     }
 }
