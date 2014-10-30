@@ -92,7 +92,6 @@ namespace Syscon.IndirectCostAllocation
             get;
             set;
         }
-        //gcStatus, gcType, gcCostType, gcSupers
 
         public string Status
         {
@@ -118,7 +117,7 @@ namespace Syscon.IndirectCostAllocation
             set;
         }
 
-        public string Method
+        public AllocationMethod AllocationMethod
         {
             get;
             set;

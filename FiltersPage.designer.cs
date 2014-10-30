@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.bttnBack = new System.Windows.Forms.Button();
             this.bttnNext = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -38,7 +39,6 @@
             this.lblJobSup = new System.Windows.Forms.Label();
             this.lblJobType = new System.Windows.Forms.Label();
             this.lblJobSts = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panelBottom.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,21 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(701, 61);
             this.panelBottom.TabIndex = 12;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.Exit_new;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(628, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(62, 39);
+            this.btnExit.TabIndex = 47;
+            this.btnExit.Text = "&Exit";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // bttnBack
             // 
@@ -109,6 +124,7 @@
             "* - All"});
             this.lstJobSup.Location = new System.Drawing.Point(387, 51);
             this.lstJobSup.Name = "lstJobSup";
+            this.lstJobSup.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstJobSup.Size = new System.Drawing.Size(293, 289);
             this.lstJobSup.TabIndex = 13;
             // 
@@ -121,6 +137,7 @@
             "* - All"});
             this.lstJobType.Location = new System.Drawing.Point(169, 51);
             this.lstJobType.Name = "lstJobType";
+            this.lstJobType.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstJobType.Size = new System.Drawing.Size(196, 289);
             this.lstJobType.TabIndex = 12;
             // 
@@ -133,6 +150,7 @@
             "* - All"});
             this.lstJobStatus.Location = new System.Drawing.Point(23, 49);
             this.lstJobStatus.Name = "lstJobStatus";
+            this.lstJobStatus.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstJobStatus.Size = new System.Drawing.Size(128, 289);
             this.lstJobStatus.TabIndex = 11;
             // 
@@ -168,21 +186,6 @@
             this.lblJobSts.Size = new System.Drawing.Size(77, 17);
             this.lblJobSts.TabIndex = 8;
             this.lblJobSts.Text = "Job Status";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.Exit_new;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(628, 11);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(62, 39);
-            this.btnExit.TabIndex = 47;
-            this.btnExit.Text = "&Exit";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FiltersPage
             // 

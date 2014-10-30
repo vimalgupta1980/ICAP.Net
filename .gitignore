@@ -74,3 +74,4 @@ Assemblies/Release/SysconCommon.dll
 Assemblies/Release/SysconCommon.pdb
 Assemblies/Release/System.Data.SQLite.dll
 Assemblies/Release/System.Data.SQLite.pdb
+*.pdb

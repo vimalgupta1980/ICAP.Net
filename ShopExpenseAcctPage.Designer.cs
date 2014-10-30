@@ -78,9 +78,9 @@
             // 
             this.bttnPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bttnPreview.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnPreview.Location = new System.Drawing.Point(484, 85);
+            this.bttnPreview.Location = new System.Drawing.Point(463, 79);
             this.bttnPreview.Name = "bttnPreview";
-            this.bttnPreview.Size = new System.Drawing.Size(58, 37);
+            this.bttnPreview.Size = new System.Drawing.Size(64, 37);
             this.bttnPreview.TabIndex = 42;
             this.bttnPreview.Text = "Pre&view";
             this.bttnPreview.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@
             // 
             this.bttnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bttnPrint.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnPrint.Location = new System.Drawing.Point(545, 85);
+            this.bttnPrint.Location = new System.Drawing.Point(526, 79);
             this.bttnPrint.Name = "bttnPrint";
-            this.bttnPrint.Size = new System.Drawing.Size(57, 37);
+            this.bttnPrint.Size = new System.Drawing.Size(64, 37);
             this.bttnPrint.TabIndex = 41;
             this.bttnPrint.Text = "&Print";
             this.bttnPrint.UseVisualStyleBackColor = true;
@@ -101,19 +101,19 @@
             // txtTotalCostInPeriod
             // 
             this.txtTotalCostInPeriod.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtTotalCostInPeriod.Location = new System.Drawing.Point(604, 13);
+            this.txtTotalCostInPeriod.Location = new System.Drawing.Point(585, 22);
             this.txtTotalCostInPeriod.Name = "txtTotalCostInPeriod";
             this.txtTotalCostInPeriod.ReadOnly = true;
-            this.txtTotalCostInPeriod.Size = new System.Drawing.Size(171, 20);
+            this.txtTotalCostInPeriod.Size = new System.Drawing.Size(194, 20);
             this.txtTotalCostInPeriod.TabIndex = 39;
             // 
             // txtTotalCostSelected
             // 
             this.txtTotalCostSelected.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtTotalCostSelected.Location = new System.Drawing.Point(604, 39);
+            this.txtTotalCostSelected.Location = new System.Drawing.Point(585, 48);
             this.txtTotalCostSelected.Name = "txtTotalCostSelected";
             this.txtTotalCostSelected.ReadOnly = true;
-            this.txtTotalCostSelected.Size = new System.Drawing.Size(171, 20);
+            this.txtTotalCostSelected.Size = new System.Drawing.Size(194, 20);
             this.txtTotalCostSelected.TabIndex = 38;
             // 
             // cboShopExpOffAcct
@@ -121,7 +121,7 @@
             this.cboShopExpOffAcct.FormattingEnabled = true;
             this.cboShopExpOffAcct.Location = new System.Drawing.Point(199, 79);
             this.cboShopExpOffAcct.Name = "cboShopExpOffAcct";
-            this.cboShopExpOffAcct.Size = new System.Drawing.Size(274, 21);
+            this.cboShopExpOffAcct.Size = new System.Drawing.Size(240, 21);
             this.cboShopExpOffAcct.TabIndex = 37;
             this.cboShopExpOffAcct.SelectedIndexChanged += new System.EventHandler(this.cboShopExpOffAcct_SelectedIndexChanged);
             // 
@@ -130,7 +130,7 @@
             this.cboShopExpTarCT.FormattingEnabled = true;
             this.cboShopExpTarCT.Location = new System.Drawing.Point(199, 55);
             this.cboShopExpTarCT.Name = "cboShopExpTarCT";
-            this.cboShopExpTarCT.Size = new System.Drawing.Size(274, 21);
+            this.cboShopExpTarCT.Size = new System.Drawing.Size(240, 21);
             this.cboShopExpTarCT.TabIndex = 36;
             // 
             // cboDirExpTarCC
@@ -138,7 +138,7 @@
             this.cboDirExpTarCC.FormattingEnabled = true;
             this.cboDirExpTarCC.Location = new System.Drawing.Point(199, 31);
             this.cboDirExpTarCC.Name = "cboDirExpTarCC";
-            this.cboDirExpTarCC.Size = new System.Drawing.Size(274, 21);
+            this.cboDirExpTarCC.Size = new System.Drawing.Size(240, 21);
             this.cboDirExpTarCC.TabIndex = 35;
             this.cboDirExpTarCC.SelectedIndexChanged += new System.EventHandler(this.cboDirExpTarCC_SelectedIndexChanged);
             // 
@@ -147,7 +147,7 @@
             this.cboDirExpTarAcct.FormattingEnabled = true;
             this.cboDirExpTarAcct.Location = new System.Drawing.Point(199, 8);
             this.cboDirExpTarAcct.Name = "cboDirExpTarAcct";
-            this.cboDirExpTarAcct.Size = new System.Drawing.Size(274, 21);
+            this.cboDirExpTarAcct.Size = new System.Drawing.Size(240, 21);
             this.cboDirExpTarAcct.TabIndex = 34;
             this.cboDirExpTarAcct.SelectedIndexChanged += new System.EventHandler(this.cboDirExpTarAcct_SelectedIndexChanged);
             // 
@@ -155,7 +155,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(479, 41);
+            this.label7.Location = new System.Drawing.Point(460, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 15);
             this.label7.TabIndex = 33;
@@ -165,7 +165,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(479, 17);
+            this.label6.Location = new System.Drawing.Point(460, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 15);
             this.label6.TabIndex = 32;
@@ -246,7 +246,7 @@
             this.dgvShopExpAccts.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvShopExpAccts.RowTemplate.Height = 18;
             this.dgvShopExpAccts.ShowCellToolTips = false;
-            this.dgvShopExpAccts.Size = new System.Drawing.Size(783, 309);
+            this.dgvShopExpAccts.Size = new System.Drawing.Size(788, 304);
             this.dgvShopExpAccts.TabIndex = 27;
             this.dgvShopExpAccts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShopExpAccts_CellClick);
             // 
@@ -317,7 +317,7 @@
             this.cboEquipment.FormattingEnabled = true;
             this.cboEquipment.Location = new System.Drawing.Point(199, 103);
             this.cboEquipment.Name = "cboEquipment";
-            this.cboEquipment.Size = new System.Drawing.Size(274, 21);
+            this.cboEquipment.Size = new System.Drawing.Size(240, 21);
             this.cboEquipment.TabIndex = 45;
             this.cboEquipment.SelectedIndexChanged += new System.EventHandler(this.cboEquipment_SelectedIndexChanged);
             // 
@@ -385,9 +385,9 @@
             this.bttnNext.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnNext.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.next;
             this.bttnNext.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnNext.Location = new System.Drawing.Point(666, 85);
+            this.bttnNext.Location = new System.Drawing.Point(651, 79);
             this.bttnNext.Name = "bttnNext";
-            this.bttnNext.Size = new System.Drawing.Size(57, 37);
+            this.bttnNext.Size = new System.Drawing.Size(64, 37);
             this.bttnNext.TabIndex = 43;
             this.bttnNext.Text = "&Next";
             this.bttnNext.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -400,9 +400,9 @@
             this.bttnBack.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnBack.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.back;
             this.bttnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnBack.Location = new System.Drawing.Point(605, 85);
+            this.bttnBack.Location = new System.Drawing.Point(589, 79);
             this.bttnBack.Name = "bttnBack";
-            this.bttnBack.Size = new System.Drawing.Size(58, 37);
+            this.bttnBack.Size = new System.Drawing.Size(64, 37);
             this.bttnBack.TabIndex = 40;
             this.bttnBack.Text = "&Back";
             this.bttnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -419,7 +419,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(783, 33);
+            this.panelTop.Size = new System.Drawing.Size(788, 33);
             this.panelTop.TabIndex = 50;
             // 
             // panelBottom
@@ -444,9 +444,9 @@
             this.panelBottom.Controls.Add(this.txtTotalCostSelected);
             this.panelBottom.Controls.Add(this.cboShopExpOffAcct);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 342);
+            this.panelBottom.Location = new System.Drawing.Point(0, 337);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(783, 131);
+            this.panelBottom.Size = new System.Drawing.Size(788, 135);
             this.panelBottom.TabIndex = 61;
             // 
             // btnExit
@@ -455,9 +455,9 @@
             this.btnExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.Exit_new;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(725, 85);
+            this.btnExit.Location = new System.Drawing.Point(715, 79);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(52, 38);
+            this.btnExit.Size = new System.Drawing.Size(64, 37);
             this.btnExit.TabIndex = 28;
             this.btnExit.Text = "&Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -470,7 +470,7 @@
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 33);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(783, 309);
+            this.panelMid.Size = new System.Drawing.Size(788, 304);
             this.panelMid.TabIndex = 52;
             // 
             // ShopExpenseAcctPage
@@ -482,9 +482,8 @@
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
             this.Name = "ShopExpenseAcctPage";
-            this.Size = new System.Drawing.Size(783, 473);
+            this.Size = new System.Drawing.Size(788, 472);
             this.Load += new System.EventHandler(this.ShopExpenseAcctPage_Load);
-            this.VisibleChanged += new System.EventHandler(this.ShopExpenseAcctPage_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShopExpAccts)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();

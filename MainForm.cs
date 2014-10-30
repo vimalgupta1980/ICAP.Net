@@ -37,6 +37,7 @@ namespace Syscon.IndirectCostAllocation
         private AdminExpenseAcctPage _adminExpAcctPage;
         private AdvanceAllocationPage _advAllocationPage;
         private SetupParams _setupParams;
+       
 
         public MainForm()
         {

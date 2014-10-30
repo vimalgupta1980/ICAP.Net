@@ -255,5 +255,33 @@ namespace Syscon.IndirectCostAllocation
 
 //RETURN (RtnVal)
 
+        public static List<string> GetFiscalYear()
+        {
+            using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
+            {
+                List<string> fYears = new List<string>();
+                List<string> lstFny = new List<string>();
+
+                DataTable dt = con.GetDataTable("FiscalYear", "SELECT * FROM msctbl");
+                foreach (DataRow row in dt.Rows)
+                {
+                    var str = row["dtanme"].ToString();
+                    string sub = str.Substring(0, 8);
+
+                    if (sub == "LGRSETUP")
+                    {
+                        lstFny.Add(row["dtalin"].ToString());
+
+                        string[] split = lstFny[0].Split(new Char[] { '¥' });
+                        var last = split[56].Trim();
+                        fYears.Add(last.Split('/')[2]);
+                    }
+                }
+
+                return fYears;
+            }
+
+        }
+
     }
 }

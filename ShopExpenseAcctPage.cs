@@ -119,9 +119,6 @@ namespace Syscon.IndirectCostAllocation
                 dgvShopExpAccts.Columns[4].DataPropertyName = "shtnme";
                 dgvShopExpAccts.Columns[5].DataPropertyName = "peramt";
 
-                _shopExpenseDS.WriteXml(@"D:\ShopExpenseData.xml");
-                _shopExpenseDS.WriteXmlSchema(@"D:\ExpenseData.xsd");
-
                 decimal totalAmount = 0.0M;
                 decimal selTotalAmount = 0.0M;
                 foreach (ICAPDataModel model in _shopExpenseData)
@@ -172,12 +169,7 @@ namespace Syscon.IndirectCostAllocation
         private void bttnNext_Click(object sender, EventArgs e)
         {
             this.MainForm.NextPage(ICAPPages.ShopExpensePage);
-            this.MainForm.Size = new Size(880, 630);
-        }
-
-        private void ShopExpenseAcctPage_VisibleChanged(object sender, EventArgs e)
-        {
-
+            this.MainForm.Size = new Size(890, 630);
         }
 
         private void ShopExpenseAcctPage_Load(object sender, EventArgs e)
@@ -265,7 +257,7 @@ namespace Syscon.IndirectCostAllocation
                 dgvShopExpAccts.Refresh();
 
                 txtTotalCostSelected.Text = "0.00";
-                _selectedPerAmount = 0.0M;
+                _selectedPerAmount = 0.00M;
             }
         }
 

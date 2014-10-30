@@ -40,7 +40,7 @@ namespace Syscon.IndirectCostAllocation
         private void bttnBack_Click(object sender, EventArgs e)
         {
             this.MainForm.PreviousPage(ICAPPages.AdvanceAllocationPage);
-            this.MainForm.Size = new System.Drawing.Size(880, 630);
+            this.MainForm.Size = new System.Drawing.Size(890, 630);
         }
 
         private void bttnReCalc_Click(object sender, EventArgs e)

@@ -30,12 +30,16 @@ namespace Syscon.IndirectCostAllocation
 
         private void FormSetup_Load(object sender, EventArgs e)
         {
-           
+            //Save params
+            txtCompanyName.Text = Env.GetConfigVar("Company_Name");
+            chkCopyPercent.Checked = Env.GetConfigVar<bool>("CopyPercentToJobcst", false, true);
+            chkCreateReversal.Checked = Env.GetConfigVar<bool>("CreateReversalEntry", false, true);
+           // txtSMBDir.Text = this.MainForm.MbApi.smartGetSMBDir();
         }
 
         public MainForm MainForm
         {
-            get { return this.ParentForm as MainForm; }
+            get { return this.Owner as MainForm; }
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
@@ -49,6 +53,13 @@ namespace Syscon.IndirectCostAllocation
             _setupParams.CompanyName = txtCompanyName.Text;
             _setupParams.CopyPercentToJobcst = this.chkCopyPercent.Checked;
             _setupParams.CreateReversalEntry = this.chkCreateReversal.Checked;
+            _setupParams.MBDir = this.txtSMBDir.Text;
+
+            //Save Configuration to XML file
+            Env.SetConfigVar("Company_Name", _setupParams.CompanyName);
+            Env.SetConfigVar("CopyPercentToJobcst", _setupParams.CopyPercentToJobcst.ToString());
+            Env.SetConfigVar("CreateReversalEntry", _setupParams.CreateReversalEntry);   
+
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 

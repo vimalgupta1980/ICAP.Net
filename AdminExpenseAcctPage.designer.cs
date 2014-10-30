@@ -28,22 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.chkSelectAll = new System.Windows.Forms.CheckBox();
             this.chkUnSelectAll = new System.Windows.Forms.CheckBox();
             this.chkHideZeroAccts = new System.Windows.Forms.CheckBox();
             this.chkSortBySubAcct = new System.Windows.Forms.CheckBox();
             this.dgvOverheadExpAcct = new System.Windows.Forms.DataGridView();
-            this.useAct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_Acc_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,6 +59,12 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panelMid = new System.Windows.Forms.Panel();
+            this.useAct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_Acc_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOverheadExpAcct)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -84,7 +85,7 @@
             // 
             this.chkSelectAll.AutoSize = true;
             this.chkSelectAll.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSelectAll.Location = new System.Drawing.Point(201, 8);
+            this.chkSelectAll.Location = new System.Drawing.Point(236, 8);
             this.chkSelectAll.Name = "chkSelectAll";
             this.chkSelectAll.Size = new System.Drawing.Size(75, 19);
             this.chkSelectAll.TabIndex = 1;
@@ -96,7 +97,7 @@
             // 
             this.chkUnSelectAll.AutoSize = true;
             this.chkUnSelectAll.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUnSelectAll.Location = new System.Drawing.Point(290, 8);
+            this.chkUnSelectAll.Location = new System.Drawing.Point(325, 8);
             this.chkUnSelectAll.Name = "chkUnSelectAll";
             this.chkUnSelectAll.Size = new System.Drawing.Size(95, 19);
             this.chkUnSelectAll.TabIndex = 2;
@@ -108,7 +109,7 @@
             // 
             this.chkHideZeroAccts.AutoSize = true;
             this.chkHideZeroAccts.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHideZeroAccts.Location = new System.Drawing.Point(402, 8);
+            this.chkHideZeroAccts.Location = new System.Drawing.Point(437, 8);
             this.chkHideZeroAccts.Name = "chkHideZeroAccts";
             this.chkHideZeroAccts.Size = new System.Drawing.Size(121, 19);
             this.chkHideZeroAccts.TabIndex = 3;
@@ -120,7 +121,7 @@
             // 
             this.chkSortBySubAcct.AutoSize = true;
             this.chkSortBySubAcct.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSortBySubAcct.Location = new System.Drawing.Point(540, 8);
+            this.chkSortBySubAcct.Location = new System.Drawing.Point(575, 8);
             this.chkSortBySubAcct.Name = "chkSortBySubAcct";
             this.chkSortBySubAcct.Size = new System.Drawing.Size(131, 19);
             this.chkSortBySubAcct.TabIndex = 4;
@@ -132,19 +133,19 @@
             // 
             this.dgvOverheadExpAcct.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvOverheadExpAcct.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvOverheadExpAcct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvOverheadExpAcct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOverheadExpAcct.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOverheadExpAcct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOverheadExpAcct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOverheadExpAcct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOverheadExpAcct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOverheadExpAcct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.useAct,
@@ -159,63 +160,22 @@
             this.dgvOverheadExpAcct.GridColor = System.Drawing.Color.Navy;
             this.dgvOverheadExpAcct.Location = new System.Drawing.Point(0, 0);
             this.dgvOverheadExpAcct.Name = "dgvOverheadExpAcct";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOverheadExpAcct.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOverheadExpAcct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOverheadExpAcct.RowHeadersWidth = 20;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvOverheadExpAcct.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvOverheadExpAcct.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOverheadExpAcct.RowTemplate.Height = 18;
             this.dgvOverheadExpAcct.ShowCellToolTips = false;
-            this.dgvOverheadExpAcct.Size = new System.Drawing.Size(858, 312);
+            this.dgvOverheadExpAcct.Size = new System.Drawing.Size(788, 309);
             this.dgvOverheadExpAcct.TabIndex = 5;
             this.dgvOverheadExpAcct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOverheadExpAcct_CellClick);
-            // 
-            // useAct
-            // 
-            this.useAct.HeaderText = "";
-            this.useAct.Name = "useAct";
-            this.useAct.Width = 20;
-            // 
-            // Account
-            // 
-            this.Account.HeaderText = "Account";
-            this.Account.Name = "Account";
-            this.Account.ReadOnly = true;
-            this.Account.Width = 90;
-            // 
-            // Account_Name
-            // 
-            this.Account_Name.HeaderText = "Account Name";
-            this.Account_Name.Name = "Account_Name";
-            this.Account_Name.ReadOnly = true;
-            this.Account_Name.Width = 200;
-            // 
-            // Sub_Account
-            // 
-            this.Sub_Account.HeaderText = "Sub-Account";
-            this.Sub_Account.Name = "Sub_Account";
-            this.Sub_Account.ReadOnly = true;
-            this.Sub_Account.Width = 120;
-            // 
-            // Sub_Acc_Name
-            // 
-            this.Sub_Acc_Name.HeaderText = "Sub-Account Name";
-            this.Sub_Acc_Name.Name = "Sub_Acc_Name";
-            this.Sub_Acc_Name.ReadOnly = true;
-            this.Sub_Acc_Name.Width = 175;
-            // 
-            // Period
-            // 
-            this.Period.HeaderText = "Period $ Amt";
-            this.Period.Name = "Period";
-            this.Period.ReadOnly = true;
-            this.Period.Width = 130;
             // 
             // label2
             // 
@@ -337,9 +297,9 @@
             // 
             this.bttnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bttnPrint.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnPrint.Location = new System.Drawing.Point(526, 74);
+            this.bttnPrint.Location = new System.Drawing.Point(517, 77);
             this.bttnPrint.Name = "bttnPrint";
-            this.bttnPrint.Size = new System.Drawing.Size(65, 37);
+            this.bttnPrint.Size = new System.Drawing.Size(64, 38);
             this.bttnPrint.TabIndex = 19;
             this.bttnPrint.Text = "&Print";
             this.bttnPrint.UseVisualStyleBackColor = true;
@@ -349,9 +309,9 @@
             // 
             this.bttnPreview.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.bttnPreview.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnPreview.Location = new System.Drawing.Point(462, 74);
+            this.bttnPreview.Location = new System.Drawing.Point(453, 77);
             this.bttnPreview.Name = "bttnPreview";
-            this.bttnPreview.Size = new System.Drawing.Size(64, 37);
+            this.bttnPreview.Size = new System.Drawing.Size(64, 38);
             this.bttnPreview.TabIndex = 20;
             this.bttnPreview.Text = "Pre&view";
             this.bttnPreview.UseVisualStyleBackColor = true;
@@ -363,9 +323,9 @@
             this.bttnNext.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnNext.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.next;
             this.bttnNext.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnNext.Location = new System.Drawing.Point(655, 74);
+            this.bttnNext.Location = new System.Drawing.Point(646, 77);
             this.bttnNext.Name = "bttnNext";
-            this.bttnNext.Size = new System.Drawing.Size(65, 37);
+            this.bttnNext.Size = new System.Drawing.Size(64, 38);
             this.bttnNext.TabIndex = 21;
             this.bttnNext.Text = "&Next";
             this.bttnNext.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -378,9 +338,9 @@
             this.bttnBack.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnBack.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.back;
             this.bttnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bttnBack.Location = new System.Drawing.Point(591, 74);
+            this.bttnBack.Location = new System.Drawing.Point(582, 77);
             this.bttnBack.Name = "bttnBack";
-            this.bttnBack.Size = new System.Drawing.Size(64, 37);
+            this.bttnBack.Size = new System.Drawing.Size(64, 38);
             this.bttnBack.TabIndex = 18;
             this.bttnBack.Text = "&Back";
             this.bttnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -397,7 +357,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(858, 30);
+            this.panelTop.Size = new System.Drawing.Size(788, 33);
             this.panelTop.TabIndex = 22;
             // 
             // panelBottom
@@ -422,18 +382,18 @@
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 342);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(858, 130);
+            this.panelBottom.Size = new System.Drawing.Size(788, 130);
             this.panelBottom.TabIndex = 23;
             // 
             // btnExit
             // 
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Image = global::Syscon.IndirectCostAllocation.Properties.Resources.Exit_new;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(720, 74);
+            this.btnExit.Location = new System.Drawing.Point(711, 77);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(60, 38);
+            this.btnExit.Size = new System.Drawing.Size(64, 38);
             this.btnExit.TabIndex = 22;
             this.btnExit.Text = "&Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -444,10 +404,53 @@
             // 
             this.panelMid.Controls.Add(this.dgvOverheadExpAcct);
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMid.Location = new System.Drawing.Point(0, 30);
+            this.panelMid.Location = new System.Drawing.Point(0, 33);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(858, 312);
+            this.panelMid.Size = new System.Drawing.Size(788, 309);
             this.panelMid.TabIndex = 24;
+            // 
+            // useAct
+            // 
+            this.useAct.HeaderText = "";
+            this.useAct.Name = "useAct";
+            this.useAct.Width = 20;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Account";
+            this.Account.Name = "Account";
+            this.Account.ReadOnly = true;
+            this.Account.Width = 90;
+            // 
+            // Account_Name
+            // 
+            this.Account_Name.HeaderText = "Account Name";
+            this.Account_Name.Name = "Account_Name";
+            this.Account_Name.ReadOnly = true;
+            this.Account_Name.Width = 200;
+            // 
+            // Sub_Account
+            // 
+            this.Sub_Account.HeaderText = "Sub-Account";
+            this.Sub_Account.Name = "Sub_Account";
+            this.Sub_Account.ReadOnly = true;
+            this.Sub_Account.Width = 120;
+            // 
+            // Sub_Acc_Name
+            // 
+            this.Sub_Acc_Name.HeaderText = "Sub-Account Name";
+            this.Sub_Acc_Name.Name = "Sub_Acc_Name";
+            this.Sub_Acc_Name.ReadOnly = true;
+            this.Sub_Acc_Name.Width = 175;
+            // 
+            // Period
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Period.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Period.HeaderText = "Period $ Amt";
+            this.Period.Name = "Period";
+            this.Period.ReadOnly = true;
+            this.Period.Width = 130;
             // 
             // AdminExpenseAcctPage
             // 
@@ -498,12 +501,12 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Panel panelMid;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridViewCheckBoxColumn useAct;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sub_Account;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sub_Acc_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Period;
-        private System.Windows.Forms.Button btnExit;
     }
 }

@@ -111,8 +111,8 @@ namespace Syscon.IndirectCostAllocation
                 _adminExpenseDS.WriteXml(@"D:\AdminExpenseData.xml");
                 _adminExpenseDS.WriteXmlSchema(@"D:\AdminExpenseData.xsd");
 
-                decimal totalAmount = 0.0M;
-                decimal selTotalAmount = 0.0M;
+                decimal totalAmount = 0.00M;
+                decimal selTotalAmount = 0.00M;
                 foreach (ICAPDataModel model in _adminExpenseData)
                 {
                     _bindingSrc.Add(model);
@@ -136,7 +136,7 @@ namespace Syscon.IndirectCostAllocation
 
         private void bttnPreview_Click(object sender, EventArgs e)
         {
-            using (ExpenseReportViewerForm reportViewer = new ExpenseReportViewerForm(_adminExpenseDS, 0.0M))
+            using (ExpenseReportViewerForm reportViewer = new ExpenseReportViewerForm(_adminExpenseDS, _selectedPerAmount))
             {
                 reportViewer.ShowDialog();
             }
@@ -150,7 +150,7 @@ namespace Syscon.IndirectCostAllocation
         private void bttnBack_Click(object sender, EventArgs e)
         {
             this.MainForm.PreviousPage(ICAPPages.AdminExpensePage);
-            this.MainForm.Size = new Size(880, 630);
+            this.MainForm.Size = new Size(890, 630);
         }
 
         private void bttnNext_Click(object sender, EventArgs e)
@@ -184,12 +184,14 @@ namespace Syscon.IndirectCostAllocation
 
                 chkSelectAll.Checked = false;
                 dgvOverheadExpAcct.Refresh();
+
+                txtTotalCostSelected.Text = "0.00";
+
+                if (_adminExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
+                    _adminExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", 0.00M);
+
+                _selectedPerAmount = 0.00M;
             }
-
-            if (_adminExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
-                _adminExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", 0.0M);
-
-            _selectedPerAmount = 0.0M;
         }
 
         private void chkHideZeroAccts_CheckedChanged(object sender, EventArgs e)

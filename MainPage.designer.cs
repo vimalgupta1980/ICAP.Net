@@ -208,6 +208,7 @@
             this.lstCostType.ItemHeight = 15;
             this.lstCostType.Location = new System.Drawing.Point(337, 46);
             this.lstCostType.Name = "lstCostType";
+            this.lstCostType.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstCostType.Size = new System.Drawing.Size(259, 214);
             this.lstCostType.TabIndex = 14;
             // 

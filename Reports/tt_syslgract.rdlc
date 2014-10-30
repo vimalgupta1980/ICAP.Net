@@ -110,7 +110,7 @@
               <TextRun>
                 <Value>=Now()</Value>
                 <Style>
-                  <Format>dd/MM/yyyy</Format>
+                  <Format>MM/dd/yyyy</Format>
                   <TextDecoration>Underline</TextDecoration>
                 </Style>
               </TextRun>
