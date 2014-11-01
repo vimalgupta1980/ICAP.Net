@@ -93,30 +93,6 @@ namespace Syscon.IndirectCostAllocation
             set;
         }
 
-        public string Status
-        {
-            get;
-            set;
-        }
-
-        public string CostType
-        {
-            get;
-            set;
-        }
-
-        public string Type
-        {
-            get;
-            set;
-        }
-
-        public string Supers
-        {
-            get;
-            set;
-        }
-
         public AllocationMethod AllocationMethod
         {
             get;
@@ -134,5 +110,54 @@ namespace Syscon.IndirectCostAllocation
             get;
             set;
         }
+
+        public List<string> CostTypes
+        {
+            get;
+            set;
+        }
+
+        public List<string> JobStatus
+        {
+            get;
+            set;
+        }
+
+        public List<string> jobTypes
+        {
+            get;
+            set;
+        }
+
+        public List<string> JobSupervisors
+        {
+            get;
+            set;
+        }
+
+        public string GetDirectExpTarAcct
+        {
+            get;
+            set;
+        }
+
+        public string GetDirExpTarCostCode
+        {
+            get;
+            set;
+        }
+
+        public string GetDirExpTarCostType
+        {
+            get;
+            set;
+        }
+
+        public string GetOverheadExpOffsetAcct
+        {
+            get;
+            set;
+        }
     }
+
 }

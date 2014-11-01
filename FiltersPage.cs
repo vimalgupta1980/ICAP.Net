@@ -76,6 +76,7 @@ namespace Syscon.IndirectCostAllocation
             DataTable dt = null;
             List<ListBoxData> jobTypeData = new List<ListBoxData>();
             List<ListBoxData> jobSupData = new List<ListBoxData>();
+                     
 
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
@@ -97,6 +98,8 @@ namespace Syscon.IndirectCostAllocation
                 jobSupData.Add(new ListBoxData() { Name = "* - ALL", Value = "0" });
                 jobSupData.AddRange(dt.Rows.Select(p => new ListBoxData() { Name = (p[0].ToString().Trim() + " - " + p[1].ToString().Trim()), Value = p[0].ToString() }));
                 lstJobSup.DataSource = jobSupData;
+
+                
             }
         }
 
@@ -106,12 +109,38 @@ namespace Syscon.IndirectCostAllocation
             this.MainForm.Size = new Size(750, 530);
         }
 
+        List<string> listJobStatus = new List<string>();
+        List<string> listJobType = new List<string>();
+        List<string> listJobSup = new List<string>();
+
+
         private void bttnNext_Click_1(object sender, EventArgs e)
         {
+            //selected Fill JobStatus
+            foreach (ListBoxData item in lstJobStatus.SelectedItems)
+            {
+                listJobStatus.Add(item.Name.Split('-')[1].ToString());
+                Globals.Instance.JobStatus = listJobStatus;
+            }
+
+            //selected Fill JobType
+            foreach (ListBoxData item in lstJobType.SelectedItems)
+            {
+                listJobType.Add(item.Name.Split('-')[1].ToString());
+                Globals.Instance.jobTypes = listJobType;
+            }
+            //selected Fill JobType
+            foreach (ListBoxData item in lstJobSup.SelectedItems)
+            {
+                listJobSup.Add(item.Name.Split('-')[1].ToString());
+                Globals.Instance.JobSupervisors = listJobSup;
+            }
+
             this.MainForm.NextPage(ICAPPages.FiltersPage);
             this.MainForm.Size = new Size(890, 630);
         }
 
+      
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.ParentForm.Close();

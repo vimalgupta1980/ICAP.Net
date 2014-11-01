@@ -36,12 +36,14 @@ namespace Syscon.IndirectCostAllocation
             get { return this.ParentForm as MainForm; }
         }
 
-        List<string> Target = new List<string>();
-        List<string> Offset = new List<string>();
-        List<string> CostCode = new List<string>();
-        List<string> CostType = new List<string>();
+        
         public void LoadData()
         {
+            List<string> Target = new List<string>();
+            List<string> Offset = new List<string>();
+            List<string> CostCode = new List<string>();
+            List<string> CostType = new List<string>();
+
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
                  DataTable _dt = con.GetDataTable("TargetAccount", "SELECT * FROM lgract");
@@ -83,7 +85,6 @@ namespace Syscon.IndirectCostAllocation
                 
                 DataTable dt = con.GetDataTable("OverheadExpenseData", "SELECT * FROM syslgract WHERE recnum >= 6000 AND recnum < 7000");
                 dt.TableName = "ExpenseData";
-                dt.Columns.Add(new DataColumn("TotalPerAmt", typeof(decimal)));
 
                 _overheadExpenseDS.Tables.Add(dt);
 
@@ -97,7 +98,7 @@ namespace Syscon.IndirectCostAllocation
                 dgvOverheadExpAccts.AutoGenerateColumns = false;
                
                 dgvOverheadExpAccts.ColumnCount = 6;
-                dgvOverheadExpAccts.DataSource = dt;
+                dgvOverheadExpAccts.DataSource = _bindingSrc;
                 
                 dgvOverheadExpAccts.Columns[0].DataPropertyName = "useAct";
                 dgvOverheadExpAccts.Columns[1].DataPropertyName = "recnum";
@@ -121,8 +122,6 @@ namespace Syscon.IndirectCostAllocation
 
                 txtTotalCostInPeriod.Text = totalAmount.ToString();
                 txtTotalCostSelected.Text = selTotalAmount.ToString();
-                if (dt.Rows.Count > 0)
-                    _overheadExpenseDS.Tables[0].Rows[0].SetField<decimal>("TotalPerAmt", selTotalAmount);
 
                 _selectedPerAmount = selTotalAmount;
             }
@@ -133,10 +132,10 @@ namespace Syscon.IndirectCostAllocation
 
             foreach (DataGridViewRow row in dgvOverheadExpAccts.Rows)
             {
-                if (row.Cells[3].Value.ToString() == "0") //**Object reference not set to an instance of an object**
-                {
-                    row.Cells[3].Style.ForeColor = Color.Red;
-                }
+                //if (row.Cells[3].Value.ToString() == "0") //**Object reference not set to an instance of an object**
+                //{
+                //    row.Cells[3].Style.ForeColor = Color.Red;
+                //}
             }
 
         }
@@ -193,8 +192,6 @@ namespace Syscon.IndirectCostAllocation
                 chkSelectAll.Checked = false;
                 dgvOverheadExpAccts.Refresh();
             }
-            if (_overheadExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
-                _overheadExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", 0.00M);
 
             _selectedPerAmount = 0.00M;
         }
@@ -211,8 +208,6 @@ namespace Syscon.IndirectCostAllocation
             }
 
             txtTotalCostSelected.Text = sumSelAmt.ToString();
-            if (_overheadExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
-                _overheadExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", sumSelAmt);
 
             _selectedPerAmount = sumSelAmt;
         }
@@ -279,7 +274,17 @@ namespace Syscon.IndirectCostAllocation
 
         private void dgvOverheadExpAccts_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-
+            
+         int cellValue = 0;
+ 
+         if (e.Value != null && Int32.TryParse(e.Value.ToString(), out cellValue))
+         {
+             if (cellValue == 0)
+             {
+                 e.CellStyle.ForeColor = e.CellStyle.BackColor;
+                 e.CellStyle.SelectionForeColor = e.CellStyle.SelectionBackColor;
+             }
+         }
         }
 
     }

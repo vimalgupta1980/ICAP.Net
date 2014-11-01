@@ -32,6 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvanceAllocationPage));
             this.lblMethod = new System.Windows.Forms.Label();
             this.dgvAdvAllocation = new System.Windows.Forms.DataGridView();
+            this.job_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.method1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shop_orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shop_ed_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dh_orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dh_ed_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adm_orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adm_ed_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,15 +56,6 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.job_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.method1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shop_orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shop_ed_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dh_orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dh_ed_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adm_orig = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adm_ed_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdvAllocation)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,8 +64,8 @@
             // 
             // lblMethod
             // 
-            this.lblMethod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMethod.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMethod.AutoSize = true;
             this.lblMethod.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMethod.Location = new System.Drawing.Point(734, 5);
@@ -103,6 +103,53 @@
             this.dgvAdvAllocation.RowHeadersWidth = 25;
             this.dgvAdvAllocation.Size = new System.Drawing.Size(940, 376);
             this.dgvAdvAllocation.TabIndex = 1;
+            // 
+            // job_name
+            // 
+            this.job_name.HeaderText = "Job Name";
+            this.job_name.Name = "job_name";
+            this.job_name.Width = 150;
+            // 
+            // method1
+            // 
+            this.method1.HeaderText = "(Method 1) Costs";
+            this.method1.Name = "method1";
+            // 
+            // perc
+            // 
+            this.perc.HeaderText = "%";
+            this.perc.Name = "perc";
+            this.perc.Width = 60;
+            // 
+            // shop_orig
+            // 
+            this.shop_orig.HeaderText = "Shop Orig. Alloc.";
+            this.shop_orig.Name = "shop_orig";
+            // 
+            // shop_ed_cost
+            // 
+            this.shop_ed_cost.HeaderText = "Shop Edited Costs";
+            this.shop_ed_cost.Name = "shop_ed_cost";
+            // 
+            // dh_orig
+            // 
+            this.dh_orig.HeaderText = "D/H Orig. Alloc.";
+            this.dh_orig.Name = "dh_orig";
+            // 
+            // dh_ed_cost
+            // 
+            this.dh_ed_cost.HeaderText = "D/H Edited Costs";
+            this.dh_ed_cost.Name = "dh_ed_cost";
+            // 
+            // adm_orig
+            // 
+            this.adm_orig.HeaderText = "Admin Orig. Alloc.";
+            this.adm_orig.Name = "adm_orig";
+            // 
+            // adm_ed_cost
+            // 
+            this.adm_ed_cost.HeaderText = "Admin Edited Costs";
+            this.adm_ed_cost.Name = "adm_ed_cost";
             // 
             // label2
             // 
@@ -288,53 +335,6 @@
             this.panel2.Size = new System.Drawing.Size(940, 376);
             this.panel2.TabIndex = 16;
             // 
-            // job_name
-            // 
-            this.job_name.HeaderText = "Job Name";
-            this.job_name.Name = "job_name";
-            this.job_name.Width = 150;
-            // 
-            // method1
-            // 
-            this.method1.HeaderText = "(Method 1) Costs";
-            this.method1.Name = "method1";
-            // 
-            // perc
-            // 
-            this.perc.HeaderText = "%";
-            this.perc.Name = "perc";
-            this.perc.Width = 60;
-            // 
-            // shop_orig
-            // 
-            this.shop_orig.HeaderText = "Shop Orig. Alloc.";
-            this.shop_orig.Name = "shop_orig";
-            // 
-            // shop_ed_cost
-            // 
-            this.shop_ed_cost.HeaderText = "Shop Edited Costs";
-            this.shop_ed_cost.Name = "shop_ed_cost";
-            // 
-            // dh_orig
-            // 
-            this.dh_orig.HeaderText = "D/H Orig. Alloc.";
-            this.dh_orig.Name = "dh_orig";
-            // 
-            // dh_ed_cost
-            // 
-            this.dh_ed_cost.HeaderText = "D/H Edited Costs";
-            this.dh_ed_cost.Name = "dh_ed_cost";
-            // 
-            // adm_orig
-            // 
-            this.adm_orig.HeaderText = "Admin Orig. Alloc.";
-            this.adm_orig.Name = "adm_orig";
-            // 
-            // adm_ed_cost
-            // 
-            this.adm_ed_cost.HeaderText = "Admin Edited Costs";
-            this.adm_ed_cost.Name = "adm_ed_cost";
-            // 
             // AdvanceAllocationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +345,7 @@
             this.Controls.Add(this.panelTop);
             this.Name = "AdvanceAllocationPage";
             this.Size = new System.Drawing.Size(940, 515);
+            this.Load += new System.EventHandler(this.AdvanceAllocationPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdvAllocation)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();

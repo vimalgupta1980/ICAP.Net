@@ -37,16 +37,16 @@ namespace Syscon.IndirectCostAllocation
         public DataSet ShopExpenseDS
         {
             get { return _shopExpenseDS; }
-        }
-
-        List<string> Target = new List<string>();
-        List<string> Offset = new List<string>();
-        List<string> CostCode = new List<string>();
-        List<string> CostType = new List<string>();
-        List<string> eqpmnt = new List<string>();
+        }       
 
         public void LoadData()
         {
+            List<string> Target = new List<string>();
+            List<string> Offset = new List<string>();
+            List<string> CostCode = new List<string>();
+            List<string> CostType = new List<string>();
+            List<string> eqpmnt = new List<string>();
+
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
                 DataTable _dt = con.GetDataTable("TargetAccount", "SELECT * FROM lgract");
@@ -98,7 +98,7 @@ namespace Syscon.IndirectCostAllocation
 
                 DataTable dt = con.GetDataTable("ExpenseData", "SELECT * FROM syslgract WHERE recnum > 5000 AND recnum < 6000");
                 dt.TableName = "ExpenseData";
-                dt.Columns.Add(new DataColumn("TotalPerAmt", typeof(decimal)));
+
                 _shopExpenseDS.Tables.Add(dt);
 
                 _shopExpenseData = new List<ICAPDataModel>();
@@ -135,8 +135,6 @@ namespace Syscon.IndirectCostAllocation
                 txtTotalCostInPeriod.Text = totalAmount.ToString();
                 txtTotalCostSelected.Text = selTotalAmount.ToString();
 
-                if (dt.Rows.Count > 0)
-                    _shopExpenseDS.Tables[0].Rows[0].SetField<decimal>("TotalPerAmt", selTotalAmount);
                 _selectedPerAmount = selTotalAmount;
             }
         }
@@ -223,8 +221,6 @@ namespace Syscon.IndirectCostAllocation
             }
 
             txtTotalCostSelected.Text = sumSelAmt.ToString();
-            if (_shopExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
-                _shopExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", sumSelAmt);
 
             _selectedPerAmount = sumSelAmt;
         }

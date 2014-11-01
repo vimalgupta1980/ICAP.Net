@@ -39,6 +39,12 @@
             this.chkHideZeroAccts = new System.Windows.Forms.CheckBox();
             this.chkSortBySubAcct = new System.Windows.Forms.CheckBox();
             this.dgvOverheadExpAcct = new System.Windows.Forms.DataGridView();
+            this.useAct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_Acc_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,12 +65,6 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panelMid = new System.Windows.Forms.Panel();
-            this.useAct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sub_Acc_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Period = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOverheadExpAcct)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
@@ -177,6 +177,49 @@
             this.dgvOverheadExpAcct.TabIndex = 5;
             this.dgvOverheadExpAcct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOverheadExpAcct_CellClick);
             // 
+            // useAct
+            // 
+            this.useAct.HeaderText = "";
+            this.useAct.Name = "useAct";
+            this.useAct.Width = 20;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Account";
+            this.Account.Name = "Account";
+            this.Account.ReadOnly = true;
+            this.Account.Width = 90;
+            // 
+            // Account_Name
+            // 
+            this.Account_Name.HeaderText = "Account Name";
+            this.Account_Name.Name = "Account_Name";
+            this.Account_Name.ReadOnly = true;
+            this.Account_Name.Width = 200;
+            // 
+            // Sub_Account
+            // 
+            this.Sub_Account.HeaderText = "Sub-Account";
+            this.Sub_Account.Name = "Sub_Account";
+            this.Sub_Account.ReadOnly = true;
+            this.Sub_Account.Width = 120;
+            // 
+            // Sub_Acc_Name
+            // 
+            this.Sub_Acc_Name.HeaderText = "Sub-Account Name";
+            this.Sub_Acc_Name.Name = "Sub_Acc_Name";
+            this.Sub_Acc_Name.ReadOnly = true;
+            this.Sub_Acc_Name.Width = 175;
+            // 
+            // Period
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Period.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Period.HeaderText = "Period $ Amt";
+            this.Period.Name = "Period";
+            this.Period.ReadOnly = true;
+            this.Period.Width = 130;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -213,9 +256,9 @@
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 15);
+            this.label5.Size = new System.Drawing.Size(173, 15);
             this.label5.TabIndex = 9;
-            this.label5.Text = "O/H Expense Offset Account";
+            this.label5.Text = "Admin Expense Offset Account";
             // 
             // label6
             // 
@@ -408,49 +451,6 @@
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(788, 309);
             this.panelMid.TabIndex = 24;
-            // 
-            // useAct
-            // 
-            this.useAct.HeaderText = "";
-            this.useAct.Name = "useAct";
-            this.useAct.Width = 20;
-            // 
-            // Account
-            // 
-            this.Account.HeaderText = "Account";
-            this.Account.Name = "Account";
-            this.Account.ReadOnly = true;
-            this.Account.Width = 90;
-            // 
-            // Account_Name
-            // 
-            this.Account_Name.HeaderText = "Account Name";
-            this.Account_Name.Name = "Account_Name";
-            this.Account_Name.ReadOnly = true;
-            this.Account_Name.Width = 200;
-            // 
-            // Sub_Account
-            // 
-            this.Sub_Account.HeaderText = "Sub-Account";
-            this.Sub_Account.Name = "Sub_Account";
-            this.Sub_Account.ReadOnly = true;
-            this.Sub_Account.Width = 120;
-            // 
-            // Sub_Acc_Name
-            // 
-            this.Sub_Acc_Name.HeaderText = "Sub-Account Name";
-            this.Sub_Acc_Name.Name = "Sub_Acc_Name";
-            this.Sub_Acc_Name.ReadOnly = true;
-            this.Sub_Acc_Name.Width = 175;
-            // 
-            // Period
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Period.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Period.HeaderText = "Period $ Amt";
-            this.Period.Name = "Period";
-            this.Period.ReadOnly = true;
-            this.Period.Width = 130;
             // 
             // AdminExpenseAcctPage
             // 

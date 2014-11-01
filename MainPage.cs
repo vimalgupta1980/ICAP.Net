@@ -159,10 +159,12 @@ namespace Syscon.IndirectCostAllocation
             this.ParentForm.Close();
         }
 
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             ListBoxData start = (ListBoxData)cboStartPeriod.SelectedValue;
             ListBoxData end = (ListBoxData)cboPeriodEnd.SelectedValue;
+            List<string> lstCstType = new List<string>();
 
             Globals.Instance.PeriodBeginning = Convert.ToInt32(start.Value);
             Globals.Instance.PeriodEnd = Convert.ToInt32(end.Value);
@@ -171,6 +173,12 @@ namespace Syscon.IndirectCostAllocation
 
             this.MainForm.NextPage(ICAPPages.MainPage);
             this.MainForm.Size = new Size(730, 530);
+
+            foreach (ListBoxData item in lstCostType.SelectedItems)
+            {
+                lstCstType.Add(item.Name.Split('-')[1].ToString());
+            }
+            Globals.Instance.CostTypes = lstCstType; 
         }
 
         private void btnHelp_Click(object sender, EventArgs e)

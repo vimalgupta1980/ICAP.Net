@@ -34,15 +34,15 @@ namespace Syscon.IndirectCostAllocation
         private MainForm MainForm
         {
             get { return this.ParentForm as MainForm; }
-        }
-
-        List<string> Target = new List<string>();
-        List<string> Offset = new List<string>();
-        List<string> CostCode = new List<string>();
-        List<string> CostType = new List<string>();
+        }        
 
         public void LoadData()
         {
+            List<string> Target = new List<string>();
+            List<string> Offset = new List<string>();
+            List<string> CostCode = new List<string>();
+            List<string> CostType = new List<string>();
+
             using (var con = SysconCommon.Common.Environment.Connections.GetOLEDBConnection())
             {
                 DataTable _dt = con.GetDataTable("TargetAccount", "SELECT * FROM lgract");
@@ -52,18 +52,15 @@ namespace Syscon.IndirectCostAllocation
                     {
                         Target.Add(row["recnum"].ToString() + " - " + row["lngnme"].ToString());
                     }
-
                 }
 
                 DataTable _dtOffset = con.GetDataTable("Offset", "SELECT * FROM syslgract");
                 foreach (DataRow row in _dtOffset.Rows)
                 {
-
                     if (Convert.ToInt32(row["acttyp"]) == 14)
                     {
                         Offset.Add(row["recnum"].ToString() + " - " + row["lngnme"].ToString());
                     }
-
                 }
 
                 DataTable _dtCostCode = con.GetDataTable("CostCode", "SELECT * FROM cstcde");
@@ -77,7 +74,6 @@ namespace Syscon.IndirectCostAllocation
                 foreach (DataRow row in _dtCostType.Rows)
                 {
                     CostType.Add(row["recnum"].ToString() + " - " + row["typnme"].ToString());
-
                 }
 
                 cboDirectExpTarAcct.DataSource = Target;
@@ -87,7 +83,7 @@ namespace Syscon.IndirectCostAllocation
 
                 DataTable dt = con.GetDataTable("AdminExpenseData", "SELECT * FROM syslgract WHERE recnum > 7000 AND recnum < 8000");
                 dt.TableName = "ExpenseData";
-                dt.Columns.Add(new DataColumn("TotalPerAmt", typeof(decimal)));
+
                 _adminExpenseDS.Tables.Add(dt);
 
                 _adminExpenseData = new List<ICAPDataModel>();
@@ -108,9 +104,6 @@ namespace Syscon.IndirectCostAllocation
                 dgvOverheadExpAcct.Columns[4].DataPropertyName = "shtnme";
                 dgvOverheadExpAcct.Columns[5].DataPropertyName = "peramt";
 
-                _adminExpenseDS.WriteXml(@"D:\AdminExpenseData.xml");
-                _adminExpenseDS.WriteXmlSchema(@"D:\AdminExpenseData.xsd");
-
                 decimal totalAmount = 0.00M;
                 decimal selTotalAmount = 0.00M;
                 foreach (ICAPDataModel model in _adminExpenseData)
@@ -126,9 +119,6 @@ namespace Syscon.IndirectCostAllocation
 
                 txtTotalCostInPeriod.Text = totalAmount.ToString();
                 txtTotalCostSelected.Text = selTotalAmount.ToString();
-
-                if (dt.Rows.Count > 0)
-                    _adminExpenseDS.Tables[0].Rows[0].SetField<decimal>("TotalPerAmt", selTotalAmount);
 
                 _selectedPerAmount = selTotalAmount;
             }
@@ -155,6 +145,11 @@ namespace Syscon.IndirectCostAllocation
 
         private void bttnNext_Click(object sender, EventArgs e)
         {
+            Globals.Instance.GetDirectExpTarAcct = cboDirectExpTarAcct.SelectedText;
+            Globals.Instance.GetDirExpTarCostCode = cboDirExpTarCostCode.SelectedText;
+            Globals.Instance.GetDirExpTarCostType = cboDirExpTarCostType.SelectedText;
+            Globals.Instance.GetOverheadExpOffsetAcct = cboOverheadExpOffsetAcct.SelectedText;
+
             this.MainForm.NextPage(ICAPPages.AdminExpensePage);
             this.MainForm.Size = new System.Drawing.Size(1050, 720);
         }
@@ -186,9 +181,6 @@ namespace Syscon.IndirectCostAllocation
                 dgvOverheadExpAcct.Refresh();
 
                 txtTotalCostSelected.Text = "0.00";
-
-                if (_adminExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
-                    _adminExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", 0.00M);
 
                 _selectedPerAmount = 0.00M;
             }
@@ -259,8 +251,6 @@ namespace Syscon.IndirectCostAllocation
             }
 
             txtTotalCostSelected.Text = sumSelAmt.ToString();
-            if (_adminExpenseDS.Tables["ExpenseData"].Rows.Count > 0)
-                _adminExpenseDS.Tables["ExpenseData"].Rows[0].SetField<decimal>("TotalPerAmt", sumSelAmt);
 
             _selectedPerAmount = sumSelAmt;
         }
@@ -268,6 +258,8 @@ namespace Syscon.IndirectCostAllocation
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.ParentForm.Close();
+
+
         }
     }
 }
